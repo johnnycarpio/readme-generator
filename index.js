@@ -1,5 +1,11 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
+const generator = require('./src/generator');
+const path = require('path');
+
+const writeFile = (readme, data) => {
+    return fs.writeFileSync(path.join(process.cwd(), readme), data);
+}
 
 // create function to begin prompts 
 const promptUser = () => {
@@ -106,7 +112,9 @@ const promptUser = () => {
                 }
             }
         }
-    ]);
+    ]).then(data => {
+        writeFile('readme.md', generator(data))
+    });
 };
 
 promptUser();
