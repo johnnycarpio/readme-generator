@@ -84,7 +84,7 @@ const promptUser = () => {
             type: 'list',
             name: 'licenseList',
             message: 'Please choose the lisence you will be using',
-            choices: ['choice1', 'choice2', 'choice3']
+            choices: ['MIT', 'Apache-2.0', 'GPL-3.0', 'BSD-2-Clause', 'BSD-3-Clause', 'Mozilla Public License 2.0']
         },
         {
             type: 'input',
@@ -113,6 +113,7 @@ const promptUser = () => {
             }
         }
     ]).then(data => {
+        console.log("README.md file created!")
         writeFile('readme.md', generator(data))
     });
 };
