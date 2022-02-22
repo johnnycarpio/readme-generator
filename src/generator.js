@@ -12,6 +12,8 @@ function licenseGenerator(license) {
             return "[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)"
         case "Mozilla Public License 2.0":
             return "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)"
+        default:
+            return "";
     }
 }
 
